@@ -16,7 +16,7 @@ internal class HotelBooking
     internal void DisplayBookingInfo()
     {
         Console.WriteLine($"Name: {GuestName}");
-        Console.WriteLine($"Start Date: {StartDate}");
-        Console.WriteLine($"End Date: {EndDate}");
+        Console.WriteLine($"Start Date: {StartDate.ToShortDateString()}");
+        Console.WriteLine($"End Date: {EndDate.ToShortDateString()}");
     }
 }
