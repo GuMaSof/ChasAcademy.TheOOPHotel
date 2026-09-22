@@ -60,7 +60,7 @@
                 Console.Write("Skriv in hur många dagar du stannar: ");
                 var input = Console.ReadLine();
 
-                if (int.TryParse(input, out int result))
+                if (int.TryParse(input, out int result) && result > 0)
                 {
                     return result;
                 }
