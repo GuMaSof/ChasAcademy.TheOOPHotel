@@ -2,7 +2,7 @@
 
 internal class HotelBooking
 {
-    internal string GuestName {  get; set; } // sätter in guest name
+    internal List<Person> Guests {  get; set; } // sätter in guest name
     internal DateTime StartDate { get; set; } // hämtar in start datumet 
     internal DateTime EndDate { get; set; } // och slut datumet
 
@@ -12,9 +12,9 @@ internal class HotelBooking
 
 
 
-    public HotelBooking(string guestName, DateTime startDate, int lengthOfStayInDays) // Hämtar in från internal string guestname , den både hämtar och sätter värdet
+    public HotelBooking(List<Person> guests, DateTime startDate, int lengthOfStayInDays) // Hämtar in från internal string guestname , den både hämtar och sätter värdet
     {
-        GuestName = guestName; // hämtar och sätter ett värde
+        Guests = guests; // hämtar och sätter ett värde
         StartDate = startDate;// hämtar och sätter ett värde
         EndDate = startDate.AddDays(lengthOfStayInDays); // hämtar och sätter ett värde
         PricePerNight = 200;
@@ -22,9 +22,16 @@ internal class HotelBooking
 
     internal void DisplayBookingInfo()
     {
-        Console.WriteLine($"Name: {GuestName}"); // Slutligen hämtar ut informartion från guestname
         Console.WriteLine($"Start Date: {StartDate.ToShortDateString()}"); // Hämtar ut start datumet 
         Console.WriteLine($"End Date: {EndDate.ToShortDateString()}"); // Hämtar ut slut datumet 
+        foreach (var guest in Guests)
+        {
+            Console.WriteLine($"Guest Email: {guest.GuestEmail}");
+            Console.WriteLine($"Guest Phonenumber: {guest.PhoneNumber}");
+            Console.WriteLine($"Name: {guest.Name}"); // Slutligen hämtar ut informartion från guestname
+        }
+       
+
         
 
 
