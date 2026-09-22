@@ -15,7 +15,9 @@
             hotelBooking.DisplayBookingInfo();
             hotelBooking.UpdateBoking();
             hotelBooking.DisplayBookingInfo();
+            hotelBooking.TotalPrice();
 
+            
             
         }
 

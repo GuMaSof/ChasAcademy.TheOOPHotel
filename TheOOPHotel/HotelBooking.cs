@@ -6,6 +6,8 @@ internal class HotelBooking
     internal DateTime StartDate { get; set; } // hämtar in start datumet 
     internal DateTime EndDate { get; set; } // och slut datumet
 
+    internal double PricePerNight { get; set; } 
+
 
 
 
@@ -15,6 +17,7 @@ internal class HotelBooking
         GuestName = guestName; // hämtar och sätter ett värde
         StartDate = startDate;// hämtar och sätter ett värde
         EndDate = startDate.AddDays(lengthOfStayInDays); // hämtar och sätter ett värde
+        PricePerNight = 200;
     }
 
     internal void DisplayBookingInfo()
@@ -37,4 +40,19 @@ internal class HotelBooking
 
         Console.WriteLine($"UpdateBooking End Date: {EndDate.ToShortDateString()}");
     }
+
+    internal void TotalPrice() 
+    
+    {
+        var span = EndDate.Subtract(StartDate);
+        int days = span.Days;
+        var totalPrice = days * PricePerNight;
+        Console.WriteLine(totalPrice);
+
+    
+    }
+    
+
+
+
 }
