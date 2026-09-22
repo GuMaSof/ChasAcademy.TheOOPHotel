@@ -44,7 +44,7 @@
                 Console.Write("Skriv in ditt startdatum (yyyy-MM-dd): ");
                 var input = Console.ReadLine();
 
-                if (DateTime.TryParse(input, out DateTime result))
+                if (DateTime.TryParse(input, out DateTime result) && result >= DateTime.Now) 
                 {
                     return result;
                 }
@@ -71,3 +71,6 @@
         }
     }
 }
+
+
+
