@@ -8,26 +8,30 @@
             var startDate = GetStartDateInput();
             var lengthOfStay = GetLengthOfStayInput();
 
+
             var hotelBooking = new HotelBooking(guestName,startDate, lengthOfStay);
 
+
+            hotelBooking.DisplayBookingInfo();
+            hotelBooking.UpdateBoking();
             hotelBooking.DisplayBookingInfo();
 
-            hotelBooking.GuestName = Console.ReadLine();
+            
         }
 
         static string GetNameInput()
         {
-            while (true)
+            while (true)  // Loopar igenom while true 
             {
                 Console.Write("Skriv in ditt namn: ");
-                var input = Console.ReadLine();
+                var input = Console.ReadLine(); 
 
-                if (!string.IsNullOrWhiteSpace(input))
+                if (!string.IsNullOrWhiteSpace(input)) // ifall du skriver in fel information
                 {
                     return input;
                 }
 
-                Console.WriteLine("Ogiltig inmatning!");
+                Console.WriteLine("Ogiltig inmatning!"); 
             }
         }
 
@@ -61,6 +65,7 @@
 
                 Console.WriteLine("Ogiltig inmatning!");
             }
+
         }
     }
 }
